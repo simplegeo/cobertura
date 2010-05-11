@@ -1,0 +1,204 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+<!-- Process this file with docbook-to-man to generate an nroff manual
+     page: `docbook-to-man manpage.sgml > manpage.1'.  You may view
+     the manual page with: `docbook-to-man manpage.sgml | nroff -man |
+     less'.  A typical entry in a Makefile or Makefile.am is:
+
+manpage.1: manpage.sgml
+	docbook-to-man $< > $@
+
+    
+	The docbook-to-man binary is found in the docbook-to-man package.
+	Please remember that if you create the nroff version in one of the
+	debian/rules file targets (such as build), you will need to include
+	docbook-to-man in your Build-Depends control field.
+
+  -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Miguel</firstname>">
+  <!ENTITY dhsurname   "<surname>Landaeta</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>January 19, 2010</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>miguel@miguel.cc</email>">
+  <!ENTITY dhusername  "Miguel Landaeta">
+  <!ENTITY dhucpackage "<refentrytitle>COBERTURA-CHECK</refentrytitle>">
+  <!ENTITY dhpackage   "cobertura-check">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2010</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>show which classes do not have adequate test coverage</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+
+      <arg><option>--branch 0..100</option></arg>
+      <arg><option>--datafile file</option></arg>
+      <arg><option>--line 0..100</option></arg>
+      <arg><option>--regex regex:branchrate:linerate</option></arg>
+      <arg><option>--packagebranch 0..100</option></arg>
+      <arg><option>--packageline 0..100</option></arg>
+      <arg><option>--totalbranch 0..100</option></arg>
+      <arg><option>--totalline 0..100</option></arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para><command>&dhpackage;</command> can be run after your JUnit tests
+      to show which classes do not have adequate test coverage.
+    </para>
+
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+
+    <para>If no parameters are specified then all values will be set to
+     50%.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>--branch 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable branch coverage rate needed
+            by each class. This should be an integer value between 0 and
+            100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--datafile file</option>
+        </term>
+        <listitem>
+          <para>Specify the name of the file containing metadata about
+            your classes. Default value: "./cobertura.ser".</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--line 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable line coverage rate needed
+            by each class. This should be an integer value between 0 and
+            100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--regex regex:branchrate:linerate</option>
+        </term>
+        <listitem>
+          <para>For finer grained control, you can optionally specify
+            minimum branch and line coverage rates for individual classes
+            using any number of regular expressions.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--packagebranch 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable average branch coverage
+            rate needed by each package. This should be an integer value
+            between 0 and 100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--packageline 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable average line coverage
+            rate needed by each package. This should be an integer value
+            between 0 and 100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--totalbranch 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable average branch coverage
+            rate needed by the project as a whole. This should be an
+            integer value between 0 and 100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--totalline 0..100</option>
+        </term>
+        <listitem>
+          <para>Specify the minimum acceptable average line coverage
+            rate needed by the project as a whole. This should be an
+            integer value between 0 and 100. Default value is 0.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>SEE ALSO</title>
+
+    <para>junit(1), cobertura-instrument(1), cobertura-report(1),
+      cobertura-merge(1).</para>
+
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &lt;&dhemail;&gt;
+      for the &debian; system (but may be used by others).  Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the terms of &gnu; General Public License, Version 2 
+      or any later version published by the Free Software Foundation.
+    </para>
+    <para>On Debian systems, the complete text of the GNU General Public
+      License can be found in /usr/share/common-licenses/GPL.
+    </para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

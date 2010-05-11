@@ -1,0 +1,9 @@
+Document: libcobertura-java-doc
+Title: API for Cobertura
+Author: Mark Doliner <thekingant@users.sourceforge.net>
+Abstract: java library that calculates the percentage of code accessed by tests
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libcobertura-java/api/index.html
+Files: /usr/share/doc/libcobertura-java/api/*.html

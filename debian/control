@@ -1,0 +1,53 @@
+Source: cobertura
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Miguel Landaeta <miguel@miguel.cc>
+Section: java
+Priority: optional
+Build-Depends: debhelper (>> 7.0.50), ant (>= 1.7.0), javahelper (>= 0.28),
+               default-jdk (>= 1.6-34), libasm3-java (>= 3.1-2),
+               junit (>= 3.8.2), liboro-java (>= 2.0.8a),
+               liblog4j1.2-java (>= 1.2.15), libservlet2.5-java,
+               docbook-to-man (>= 1:2.0.0), maven-repo-helper
+Standards-Version: 3.8.4
+Homepage: http://cobertura.sourceforge.net/
+Vcs-Git: git://git.debian.org/svn/pkg-java/cobertura.git
+Vcs-Browser: http://git.debian.org/?p=pkg-java/cobertura.git
+
+Package: cobertura
+Architecture: all
+Depends: default-jre-headless | java5-runtime-headless,
+         libcobertura-java (= ${binary:Version}), ${misc:Depends}
+Suggests: libcobertura-java-doc (= ${binary:Version})
+Recommends: junit (>= 3.8.2)
+Description: java tool that calculates the percentage of code accessed by tests
+ Tool that measures test coverage by instrumenting a Java code base and watching
+ which lines of code are and are not executed as the test suite runs. In
+ addition to identifying untested code and locating bugs, Cobertura can
+ optimize code by flagging dead, unreachable code and can provide insights
+ into how an API operates in practice. It is based on jcoverage.
+
+Package: libcobertura-java
+Architecture: all
+Depends: ant (>= 1.7.0-6), liblog4j1.2-java (>= 1.2.15-4),
+         liboro-java (>= 2.0.8a-4), libasm3-java (>= 3.1-2),
+         libservlet2.5-java, ${misc:Depends}
+Suggests: libcobertura-java-doc (= ${binary:Version}), libjaxen-java (>= 1.1),
+          libjdom1-java (>= 1.0), libxalan2-java (>= 2.7.1),
+          libxerces2-java (>= 2.8)
+Recommends: junit (>= 3.8.2)
+Description: java library that calculates the percentage of code accessed by tests
+ Library that measures test coverage by instrumenting a Java code base and
+ watching which lines of code are and are not executed as the test suite runs.
+ In addition to identifying untested code and locating bugs, Cobertura can
+ optimize code by flagging dead, unreachable code and can provide insights
+ into how an API operates in practice. It is based on jcoverage.
+
+Package: libcobertura-java-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Suggests: libcobertura-java (= ${binary:Version})
+Description: documentation for libcobertura-java
+ Documentation for Cobertura which is a java library that calculates the
+ percentage of code accessed by tests. This package includes the javadoc API
+ and examples.

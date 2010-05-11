@@ -1,0 +1,2 @@
+build/api                                   usr/share/doc/libcobertura-java
+build/dist/package-bin/cobertura-*/examples usr/share/doc/libcobertura-java

@@ -1,0 +1,4 @@
+debian/cobertura-report		usr/bin
+debian/cobertura-merge		usr/bin
+debian/cobertura-instrument	usr/bin
+debian/cobertura-check		usr/bin

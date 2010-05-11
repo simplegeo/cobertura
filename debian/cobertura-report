@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+JAVA_LIBS=/usr/share/java
+
+java -cp $JAVA_LIBS/cobertura.jar:$JAVA_LIBS/asm3.jar:$JAVA_LIBS/asm3-tree.jar:$JAVA_LIBS/log4j-1.2.jar:$JAVA_LIBS/oro.jar net.sourceforge.cobertura.reporting.Main $*

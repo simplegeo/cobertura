@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+DEB_UPSTREAM_VERSION := \
+	$(shell dpkg-parsechangelog | sed -ne 's/^Version: \(.*\)+dfsg-.*/\1/p')
+
+%:
+	dh --with javahelper $@
+
+override_dh_auto_build:
+	ant dist
+	docbook-to-man debian/cobertura-check.sgml > cobertura-check.1
+	docbook-to-man debian/cobertura-instrument.sgml > cobertura-instrument.1
+	docbook-to-man debian/cobertura-merge.sgml > cobertura-merge.1
+	docbook-to-man debian/cobertura-report.sgml > cobertura-report.1
+
+override_dh_auto_install:
+	dh_auto_install
+	mh_installpom -plibcobertura-java $(CURDIR)/debian/cobertura.pom
+	mh_installjar -plibcobertura-java -l $(CURDIR)/debian/cobertura.pom \
+		$(CURDIR)/cobertura.jar
+	mh_installpom -plibcobertura-java $(CURDIR)/debian/cobertura-runtime.pom
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
+
+get-orig-source:
+	uscan \
+		--verbose \
+		--no-symlink \
+		--upstream-version $(DEB_UPSTREAM_VERSION) \
+		--download-version $(DEB_UPSTREAM_VERSION) \
+		--destdir .                                \
+		--force-download

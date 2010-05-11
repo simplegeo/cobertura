@@ -1,0 +1,2 @@
+build_with_system_jars.diff
+add_classpath_to_manifest.diff

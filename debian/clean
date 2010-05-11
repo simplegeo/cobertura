@@ -1,0 +1,5 @@
+*.tar.bz2
+*.tar.gz
+*.zip
+cobertura.jar
+*.1

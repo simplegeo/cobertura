@@ -1,0 +1,21 @@
+cobertura (1.9.4.1+dfsg-2) unstable; urgency=low
+
+  * Now Build-Depends on libservlet2.5-java and add a missing Depends
+    on the same package. (Closes: #580842). 
+  * Simplify list of JRE dependences for cobertura and drop JRE dependences for
+    libcobertura-java as Java libraries are no longer required to depend on a
+    JVM.
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Tue, 11 May 2010 19:21:46 -0430
+
+cobertura (1.9.4.1+dfsg-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Sat, 06 Mar 2010 22:36:44 -0430
+
+cobertura (1.9.3+dfsg-1) unstable; urgency=low
+
+  * Initial release (closes: #561177).
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Tue, 26 Jan 2010 21:44:48 -0430

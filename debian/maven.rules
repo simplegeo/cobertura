@@ -1,0 +1,4 @@
+asm asm jar s/.*/3.x/ *
+asm asm-tree jar s/.*/3.x/ *
+log4j log4j jar s/1\.2\..*/1.2.x/ *
+org.apache.ant s/ant/ant-parent/ pom s/1\.7\..*/1.7.x/ *

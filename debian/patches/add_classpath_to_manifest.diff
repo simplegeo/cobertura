@@ -1,0 +1,12 @@
+diff --git a/build.xml b/build.xml
+index 7c689da..9aac115 100644
+--- a/build.xml
++++ b/build.xml
+@@ -137,6 +137,7 @@
+ 				<attribute name="Implementation-Vendor" value="Cobertura"/>
+ 				<attribute name="Implementation-Vendor-Id" value="net.sourceforge.cobertura"/>
+ 				<attribute name="Implementation-Version" value="${version}"/>
++				<attribute name="Class-Path" value="asm3.jar asm3-tree.jar oro.jar log4j-1.2.jar servlet-api.jar"/>
+ 			</manifest>
+ 		</jar>
+ 

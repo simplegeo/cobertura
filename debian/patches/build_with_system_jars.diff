@@ -1,0 +1,35 @@
+diff --git a/build.properties b/build.properties
+index 4641708..530a635 100644
+--- a/build.properties
++++ b/build.properties
+@@ -8,11 +8,10 @@ eclipse.dir=/opt/eclipse
+ etc.dir=etc
+ examples.dir=examples
+ examples.functionalconditiontest.dir=examples/functionalconditiontest/src
+-lib.dir=lib
++lib.dir=/usr/share/java
+ src.dir=src
+ othersrc.dir=src-2
+ test.src.dir=test
+-jetty.dir=jetty
+ 
+ # Directories for generated output
+ build.dir=build
+diff --git a/build.xml b/build.xml
+index 2a19d41..5120052 100644
+--- a/build.xml
++++ b/build.xml
+@@ -18,12 +18,7 @@
+ 
+ 
+ 	<path id="base.path">
+-		<fileset dir="${lib.dir}">
+-			<include name="**/*.jar" />
+-		</fileset>
+-		<fileset dir="${jetty.dir}">
+-			<include name="lib/servlet-api*.jar" />
+-		</fileset>
++		<fileset dir="/" includesfile="debian/classpath-debian"/>
+ 	</path>
+ 
+ 	<path id="cobertura.classpath">

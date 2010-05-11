@@ -1,0 +1,178 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+<!-- Process this file with docbook-to-man to generate an nroff manual
+     page: `docbook-to-man manpage.sgml > manpage.1'.  You may view
+     the manual page with: `docbook-to-man manpage.sgml | nroff -man |
+     less'.  A typical entry in a Makefile or Makefile.am is:
+
+manpage.1: manpage.sgml
+	docbook-to-man $< > $@
+
+    
+	The docbook-to-man binary is found in the docbook-to-man package.
+	Please remember that if you create the nroff version in one of the
+	debian/rules file targets (such as build), you will need to include
+	docbook-to-man in your Build-Depends control field.
+
+  -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Miguel</firstname>">
+  <!ENTITY dhsurname   "<surname>Landaeta</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>January 19, 2010</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>miguel@miguel.cc</email>">
+  <!ENTITY dhusername  "Miguel Landaeta">
+  <!ENTITY dhucpackage "<refentrytitle>COBERTURA-INSTRUMENT</refentrytitle>">
+  <!ENTITY dhpackage   "cobertura-instrument">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2010</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>add coverage instrumentation to existing classes</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+
+      <arg><option>--basedir dir</option></arg>
+      <arg><option>--datafile file</option></arg>
+      <arg><option>--destination dir</option></arg>
+      <arg><option>--ignore regex</option></arg>
+      <arg choice="req">classes</arg>
+      <arg>...</arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para><command>&dhpackage;</command> inserts instrumentation
+      instructions directly into your compiled Java classes. When these
+      instructions are encountered by the Java Virtual Machine, the inserted
+      code increments various counters so that it is possible to tell which
+      instructions have been encountered and which have not. 
+    </para>
+
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+
+    <para>Classes may be specified individually, or as a directory tree
+      containing multiple classes.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>--basedir dir</option>
+        </term>
+        <listitem>
+          <para>Specify the base directory containing the classes you want to
+            instrument. This command line parameter should appear before any
+            classes. If you are instrumenting classes in different directories,
+            you should specify multiple basedirs.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--datafile file</option>
+        </term>
+        <listitem>
+          <para>Specify the name of the file to use for storing the metadata
+            about your classes. This is a single file containing serialized
+            Java classes.  It contains information about the names of classes
+            in your project, their method names, line numbers, etc. It will be
+            updated as your tests are run, and will be referenced by the
+            Cobertura reporting command. Default value: "./cobertura.ser".
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--destination dir</option>
+        </term>
+        <listitem>
+          <para>Specify the output directory for the instrumented classes.
+            If no destination directory is specified, then the uninstrumented
+            classes will be overwritten with their instrumented counterparts.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--ignore regex</option>
+        </term>
+        <listitem>
+          <para>Specify a regular expression to filter out certain lines of
+            your source code. This is useful for ignoring logging statements,
+            for example.  You can have as many &lt;ignore/&gt; statements as
+            you want. By default no files are ignored.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>SEE ALSO</title>
+
+    <para>junit(1), cobertura-check(1), cobertura-report(1),
+      cobertura-merge(1).</para>
+
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &lt;&dhemail;&gt;
+      for the &debian; system (but may be used by others).  Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the terms of &gnu; General Public License, Version 2 
+      or any later version published by the Free Software Foundation.
+    </para>
+    <para>On Debian systems, the complete text of the GNU General Public
+      License can be found in /usr/share/common-licenses/GPL.
+    </para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

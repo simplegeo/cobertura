@@ -1,0 +1,14 @@
+
+
+The upstream tarball has been modified as follows, to comply with DFSG:
+
+  * All .jar files under lib and antLibrary/common directories has been
+    removed since Debian packages must build with libraries installed on
+    system.
+
+  * All files under etc/dtds has been removed since it is not clear if such
+    files can be distributed. Some files have copyright notices like
+    'All rights reserved' and there are others that is not clear if they
+    are distributable or not.
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Fri, 29 Jan 2010 21:11:56 -0430

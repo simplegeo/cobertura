@@ -1,3 +1,9 @@
+cobertura (1.9.4.1+dfsg-2) UNRELEASED; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 14 Sep 2010 16:42:33 +0000
+
 cobertura (1.9.4.1+dfsg-2) unstable; urgency=low
 
   * Now Build-Depends on libservlet2.5-java and add a missing Depends

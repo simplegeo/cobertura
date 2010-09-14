@@ -1,3 +1,9 @@
+cobertura (1.9.4.1+dfsg-2sg0) unstable; urgency=low
+
+  * SimpleGeoized.
+
+ -- Ian Eure <ian@simplegeo.com>  Tue, 14 Sep 2010 09:48:53 -0700
+
 cobertura (1.9.4.1+dfsg-2) unstable; urgency=low
 
   * Now Build-Depends on libservlet2.5-java and add a missing Depends

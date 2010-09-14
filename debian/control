@@ -1,6 +1,6 @@
 Source: cobertura
 Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
-Uploaders: Miguel Landaeta <miguel@miguel.cc>
+Uploaders: Miguel Landaeta <miguel@miguel.cc>, Ian Eure <ian@simplegeo.com>
 Section: java
 Priority: optional
 Build-Depends: debhelper (>> 7.0.50), ant (>= 1.7.0), javahelper (>= 0.28),
